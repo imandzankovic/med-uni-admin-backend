@@ -20,7 +20,7 @@ exports.params = function(req, res, next, id) {
 
 exports.get = function(req, res, next) {
   Post.find({}, '-__v')
-   // .populate('author categories')
+   // .populate('author')
     .exec()
     .then(function(posts){
       res.json(posts);

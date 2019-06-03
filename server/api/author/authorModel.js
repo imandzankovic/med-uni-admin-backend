@@ -5,10 +5,14 @@ var AuthorSchema=new Schema({
     name:{
         type:String,
         required:true,
-        unique:true
+        //unique:true
     },
 
     surname:{
+        type:String,
+        required:true
+    },
+    profesion:{
         type:String,
         required:true
     },
@@ -19,7 +23,7 @@ var AuthorSchema=new Schema({
     bio:{
         type:String,
         required:true,
-        unique:true
+        //unique:true
     
     }
 });
