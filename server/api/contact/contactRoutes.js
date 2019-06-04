@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var controller = require('./postController');
+var controller = require('./contactController');
 
 router.param('id', controller.params);
 

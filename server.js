@@ -172,6 +172,7 @@ server.addPage("/oauth2callback", lien => {
 
 
 
+<<<<<<< HEAD
 mongoose.connect('mongodb+srv://imandz:iman@meduni-vneye.mongodb.net/medUniAdmin?retryWrites=true&w=majority', { useNewUrlParser: true }, (err) => {
   if (!err)
     console.log('Connected to Mongo - MedUniAdmin');
@@ -183,3 +184,20 @@ mongoose.connect('mongodb+srv://imandz:iman@meduni-vneye.mongodb.net/medUniAdmin
 app.listen(3000)
 
 
+=======
+// mongoose.connect('mongodb+srv://imandz:iman@meduni-vneye.mongodb.net/medUniAdmin?retryWrites=true&w=majority', { useNewUrlParser: true }, (err) => {
+//     if (!err)
+//         console.log('Connected to Mongo - MedUniAdmin');
+//         else {
+//             console.log(err)
+//         }
+// })
+
+mongoose.connect('mongodb+srv://imandz:iman@meduni-vneye.mongodb.net/medUni?retryWrites=true&w=majority', { useNewUrlParser: true }, (err) => {
+    if (!err)
+        console.log('Connected to Mongo - MedUni');
+        else {
+            console.log(err)
+        }
+})
+>>>>>>> 61ef7955d3e6c928862212a3bb06c8fa96384c6b
