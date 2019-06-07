@@ -2,12 +2,14 @@ var morgan = require('morgan')
 var bodyParser = require('body-parser')
 var cors = require('cors')
 var busboy = require('connect-busboy')
+var upload = require('express-fileupload');
 
 // setup global middleware here
 
 module.exports = function(app) {
   app.use(morgan());
   app.use(cors());
+  app.use(upload());
   app.use(busboy({
     highWaterMark: 2 * 1024 * 1024, // Set 2MiB buffer
   }));
