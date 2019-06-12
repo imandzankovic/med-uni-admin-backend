@@ -23,8 +23,6 @@ busboy = function (req, res) {
         title = filename
         Logger.log(`Upload of '${filename}' started`);
         
-        //set to videos
-        uploadPath+='videos/'
         // Create a write stream of the new file
         const fstream = fs.createWriteStream(path.join(uploadPath, filename));
         // Pipe it trough
@@ -44,6 +42,7 @@ busboy = function (req, res) {
         });
     })
 }
+
 
 initLien = function () {
     return server = new Lien({
@@ -116,14 +115,12 @@ handleOauthCallback = function (server, req) {
     });
 }
 
-
 exports.post = function (req, res, next) {
-   busboy(req, res);
- 
-   res.send('Done! Uploading files')
+    busboy(req, res);
 };
 
 exports.get = function (req, res, next) {
+
 
     generateAuth();
     handleOauthCallback(initLien(), req);

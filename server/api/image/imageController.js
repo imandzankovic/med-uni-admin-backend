@@ -4,7 +4,9 @@ let imgName = '';
 
 
 imageUpload = function (req, res, next) {
+  console.log(req.files.upfile)
   if (req.files.upfile) {
+    
     var file = req.files.upfile,
       name = file.name,
       type = file.mimetype;
@@ -57,6 +59,7 @@ uploadToGoogle = function (req, res) {
 }
 
 exports.post = function (req, res, next) {
+  console.log(req.files)
   imageUpload(req,res,next);
 
 };

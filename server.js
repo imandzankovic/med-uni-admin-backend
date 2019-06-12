@@ -21,10 +21,6 @@ require('./server/middleware/appMiddleware')(app);
 app.use('/api', api);
 
 
-app.get('/api/uploads',function(req,res){
-  res.sendFile(__dirname+'/index.html');
-})
-
 app.listen(config.port)
 console.log("Server Started at port 3000");
 
