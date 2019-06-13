@@ -21,6 +21,8 @@ require('./server/middleware/appMiddleware')(app);
 app.use('/api', api);
 
 
+
+
 app.listen(config.port)
 console.log("Server Started at port 3000");
 

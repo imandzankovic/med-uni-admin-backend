@@ -9,6 +9,9 @@ const Youtube = require("youtube-api")
     , fs = require('fs-extra')
     ;
 
+const { Storage } = require('@google-cloud/storage');
+let uploadimage = '';
+let imgName = '';
 const CREDENTIALS = readJson(`${__dirname}/credentials.json`);
 
 let uploadPath = __dirname + '/uploads/';
@@ -20,9 +23,9 @@ busboy = function (req, res) {
     req.pipe(req.busboy); // Pipe it trough busboy
 
     req.busboy.on('file', (fieldname, file, filename) => {
-        title = filename
+        imgName = filename
         Logger.log(`Upload of '${filename}' started`);
-        
+
         // Create a write stream of the new file
         const fstream = fs.createWriteStream(path.join(uploadPath, filename));
         // Pipe it trough
@@ -43,6 +46,33 @@ busboy = function (req, res) {
     })
 }
 
+uploadToGoogle = function (req, res) {
+
+    const GOOGLE_CLOUD_PROJECT_ID = '110088265970817095216'; // Replace with your project ID
+    const GOOGLE_CLOUD_KEYFILE = `${__dirname}/keyfile.json`; // Replace with the path to the downloaded private key
+
+    const storage = new Storage({
+        projectId: GOOGLE_CLOUD_PROJECT_ID,
+        keyFilename: GOOGLE_CLOUD_KEYFILE,
+    });
+
+    var BUCKET_NAME = 'staging.meduni.appspot.com'
+    var myBucket = storage.bucket(BUCKET_NAME)
+
+    var file = myBucket.file(imgName)
+
+    // upload file to bucket
+    let localFileLocation = uploadPath
+
+    myBucket.upload(localFileLocation, { public: true })
+        .then(file => {
+            // file saved
+        })
+
+    return res.status(200).send({
+        message: `https://storage.googleapis.com/${BUCKET_NAME}/${imgName}`
+    });
+}
 
 initLien = function () {
     return server = new Lien({
@@ -120,12 +150,13 @@ exports.post = function (req, res, next) {
 };
 
 exports.get = function (req, res, next) {
+    uploadToGoogle(req, res)
+    //res.send(200)
 
-
-    generateAuth();
-    handleOauthCallback(initLien(), req);
-    res.status(200).send('Uploading to YT');
-    Logger.log("Uploading to YT");
+    // generateAuth();
+    // handleOauthCallback(initLien(), req);
+    // res.status(200).send('Uploading to YT');
+    // Logger.log("Uploading to YT");
 
 
 };
