@@ -50,29 +50,29 @@ uploadToGoogle = function (req, res) {
 
     const GOOGLE_CLOUD_PROJECT_ID = '110088265970817095216'; // Replace with your project ID
     const GOOGLE_CLOUD_KEYFILE = `${__dirname}/keyfile.json`; // Replace with the path to the downloaded private key
-
+  
     const storage = new Storage({
-        projectId: GOOGLE_CLOUD_PROJECT_ID,
-        keyFilename: GOOGLE_CLOUD_KEYFILE,
+      projectId: GOOGLE_CLOUD_PROJECT_ID,
+      keyFilename: GOOGLE_CLOUD_KEYFILE,
     });
-
+  
     var BUCKET_NAME = 'staging.meduni.appspot.com'
     var myBucket = storage.bucket(BUCKET_NAME)
-
+  
     var file = myBucket.file(imgName)
-
+   
     // upload file to bucket
     let localFileLocation = uploadPath
-
+   
     myBucket.upload(localFileLocation, { public: true })
-        .then(file => {
-            // file saved
-        })
-
+      .then(file => {
+        // file saved
+      })
+  
     return res.status(200).send({
-        message: `https://storage.googleapis.com/${BUCKET_NAME}/${imgName}`
+      message: `https://storage.googleapis.com/${BUCKET_NAME}/${imgName}`
     });
-}
+  }
 
 initLien = function () {
     return server = new Lien({
@@ -146,17 +146,56 @@ handleOauthCallback = function (server, req) {
 }
 
 exports.post = function (req, res, next) {
-    busboy(req, res);
+    console.log(req.files.file)
+    if (req.files.file) {
+      
+      var file = req.files.file,
+        name = file.name,
+        type = file.mimetype;
+      imgName = name;
+      let uploadpath = __dirname + '/uploads/' + name;
+      uploadimage = uploadpath
+      file.mv(uploadpath, function (err) {
+        if (err) {
+          console.log("File Upload Failed", name, err);
+          res.send("Error Occured!")
+        }
+        else {
+          console.log("File Uploaded", name);
+          res.send('Done! Uploading files')
+        }
+      });
+    }
+    else {
+      res.send("No File selected !");
+      res.end();
+    };
 };
 
 exports.get = function (req, res, next) {
-    uploadToGoogle(req, res)
-    //res.send(200)
-
-    // generateAuth();
-    // handleOauthCallback(initLien(), req);
-    // res.status(200).send('Uploading to YT');
-    // Logger.log("Uploading to YT");
-
-
+    const GOOGLE_CLOUD_PROJECT_ID = '110088265970817095216'; // Replace with your project ID
+    const GOOGLE_CLOUD_KEYFILE = `${__dirname}/keyfile.json`; // Replace with the path to the downloaded private key
+  
+    const storage = new Storage({
+      projectId: GOOGLE_CLOUD_PROJECT_ID,
+      keyFilename: GOOGLE_CLOUD_KEYFILE,
+    });
+  
+    var BUCKET_NAME = 'staging.meduni.appspot.com'
+    var myBucket = storage.bucket(BUCKET_NAME)
+  
+    var file = myBucket.file(imgName)
+   
+    // upload file to bucket
+    let localFileLocation = uploadimage
+   
+    myBucket.upload(localFileLocation, { public: true })
+      .then(file => {
+        // file saved
+      })
+  
+    return res.status(200).send({
+      message: `https://storage.googleapis.com/${BUCKET_NAME}/${imgName}`
+    });
+   
 };

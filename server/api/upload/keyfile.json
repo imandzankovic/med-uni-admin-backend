@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "meduni",
+    "private_key_id": "7e1f53a3646eff4998c9e94ece9e5067d4431b64",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDO/zCtyRT4uvck\nFGR46CfzolYc1Frjz6gLu1DWbrbcKIt3oiOCOD2vz+bDgpa8o5UK0QqS+HwvOzg1\nbcHgq61iPeXNbvjlAMHlzA/0AR0dRfoo9HgHM+8iuhUOSlFsVP2YUZcU6AuaCE6P\n6ANsNi2IF4ptq2S9EupyCwuRP5zNKOGPkrUHl0ChU4YW//C8kSAhQOYhR651VPpi\nAMDiuVoDQxzdXunz1W0VXSGIXA2nnzzwMcdeYVHmsW5i7omPW0dkd1wxLLkAS9A2\n54zhKu+W6ewym59AeLEsFFn52YM6XfMWJbclniwXKzaIXQDF+vtVxDDwrXoVO7IC\nBxCcsBE9AgMBAAECggEADEpYJlVsZplZT73bOleUebGPmd4c+G5NvMaWNek0d817\nfHK214ZF2WDHg5/HGfO/h3kiftf8raQ/QeLesluXK6BfuusmIZjCKoYLg3Ime6S6\nRgC/+LODdSUl12efvoYsWYUsqovdlnt8SKyeuWfdG7nEGR9mV5ieLX/M48aqZX72\nqhoTP67uO04gV9fYMDQ3Df/5cUEKRBFcMnEvlBNBgmM5z58i5vzqOi1RwmvGPRwl\nwXj2OP/crIsuMYJJiA5qq3Mp0WlLq01DS9icFpD7XFzfWz8UgNoBi7Zb4Npuvrh4\nRuhN4xKnBNLDy4HnBNCkSpx6MQpIhOndlh/ZY+YByQKBgQD/88IQqPVtYaGGn5q8\nKskWL16Sg7KcSoCrdgHR9IguA8iewyJZrsh8AyfdwYtEDICk+jb94WE/WZuaR4c9\nne6gNGzml17PHnzxnOeqbXbtfyVBAPbtqZib/CDOckZ0JxPR8xx+3BBB682082la\nr7ybKcI0xxDSJdX++lj5s+BzSQKBgQDPCRcxmdBLQ8AqZT3lAulLX7uUtv6Llu2e\nlqSOCh0iOAqOfm+ll/CWzZZjr0s+F6HI8vSbRjnGLT2l4Ml//f5TvlpGuLN6TFMI\nTevSyF5W+GvKUhCagIXkr80mwqYMhBYj4AqZN+/Vxsnm0AiNJ7dnPnXRoQlRhnjT\nz1HiwXF6VQKBgGKz5L25+lNBGCIrQGeZ9Eva3pSPtvwweugkLNWDgFSGXwJia8e7\n8FJqgSAyN/t4+s8kMrq7BF6Cts/LD6tCUTh0nx5Zd1VWA4bFJE2Dwx4ZLwufTJog\nEdrtYtVaGjNGsoz/PJjrUlWpkn1adOFk7c3ET8E8lw8DSj/22QMKS98JAoGBAMXO\nAqnyMk9mqLgYyJ0APhM0oQzCFcsaZWbquMe4pAMolfV0mYkV9NiwDeqp9XKas4lB\njzC3VMWiPc85SGuQKairKqd9GoVTXNWHVTOrGm9vo9TGuXRULRjEWnaY7HryzBB0\nosum5O9ToV10D2eFtbXfuEOT30pT9ycvYiYK+jeNAoGAZh0Yr1CzUe3v44XJMc1u\nKk3DdbCtsKK5y13/WVXPD+NI22cLK0Is3btNAOKE7hO8YBri+U/9Rh/+2N1tFGNQ\nCjd9Q5diU/jKsWIYnLqu+Z/86fMZ2BA3bN+zyBcd6CKXEl1wHITw/l9KPZ8yeDXN\nF4RpCtH1sRteKqxX7XWnAiY=\n-----END PRIVATE KEY-----\n",
+    "client_email": "imageaccount@meduni.iam.gserviceaccount.com",
+    "client_id": "110088265970817095216",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/imageaccount%40meduni.iam.gserviceaccount.com"
+  }
+  

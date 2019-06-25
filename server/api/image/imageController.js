@@ -66,5 +66,5 @@ exports.post = function (req, res, next) {
 
 exports.get = function (req, res, next) {
   uploadToGoogle(req, res)
-  res.send(200)
+ // res.send(200)
 };
