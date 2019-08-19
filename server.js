@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var api = require('./server/api/api');
 var config = require('./server/config/config');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 // var upload = require('express-fileupload');
 // var ResumableUpload = require('node-youtube-resumable-upload');
 // var googleauth = require('google-auth-cli');
@@ -12,7 +12,7 @@ var config = require('./server/config/config');
 
 
 
-require('mongoose').connect(config.db.url);
+//require('mongoose').connect(config.db.url);
 
 
 
@@ -23,12 +23,21 @@ app.use('/api', api);
 
 
 
-app.listen(config.port)
-console.log("Server Started at port 3000");
+//app.listen(config.port)
+//console.log("Server Started at port 3000");
 
 
 
+app.listen(process.env.PORT || 3000)
 
+
+mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true }, (err) => {
+    if (!err)
+        console.log('Connected to Mongo - MedUni');
+        else {
+            console.log(err)
+        }
+});
 
 
 
