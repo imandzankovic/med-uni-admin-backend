@@ -1,6 +1,7 @@
 ## MedUni Admin Platform - Backend Solution
 
-Education platform for people interested in medical contents. 
+Education platform for people interested in medical contents.
+Admin project is used for managing posts by admin.
 
 
 ## Tech/framework used
