@@ -7,8 +7,8 @@ Education platform for people interested in medical contents.
 
 Developed with:
 
-  -Node.js
-  -Mlab
-  -Google Cloud Platform for storage
+  - Node.js
+  - Mlab
+  - Google Cloud Platform for storage
 
 Provides integration with YouTube account.
